@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Journal App</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <div class="content">
+      <div class="input">
+        <!-- input field having id of zip and place holder enter zip code here -->
+        <input type="text" placeholder="enter zip code here" id="zip" />
+        <!-- textarea having id of feeling -->
+        <textarea
+          name="feelings"
+          id="feelings"
+          placeholder="Enter your feelings here..."
+          cols="30"
+          rows="10"
+        ></textarea>
+        <!-- button having id of generate -->
+        <button id="generate">Generate</button>
+      </div>
+      <div id="entryHolder " class="output">
+        <div id="date" class="values"></div>
+        <div id="temp" class="values"></div>
+        <div id="content" class="values"></div>
+      </div>
+      <div class="statusHolder">
+        <div class="status-label">Status</div>
+        <div class="status">Click Generate to get Data</div>
+      </div>
+    </div>
+    <script src="./script/app.js"></script>
+  </body>
+</html>

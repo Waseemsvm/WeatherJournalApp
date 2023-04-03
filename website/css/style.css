@@ -1,0 +1,71 @@
+.content {
+  border: 1px solid black;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.input {
+  display: flex;
+  flex-direction: column;
+}
+
+#zip {
+  font-size: 1.2rem;
+  /* line-height: 30px; */
+}
+
+#feelings {
+  font-size: 1.2rem;
+  resize: none;
+}
+
+#generate {
+  font-size: 1.2rem;
+  background: burlywood;
+  border-radius: 8px;
+}
+
+.values {
+  font-size: 1.2rem;
+  font-weight: bolder;
+  padding: 10px 20px;
+}
+
+.statusHolder {
+  display: flex;
+  justify-content: space-around;
+  font-size: 24px;
+  font-weight: bolder;
+  margin: 15px 0px;
+}
+
+.output {
+  background: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.output .values {
+  height: 1.5rem;
+  font-size: 1.5rem;
+}
+
+#date::before {
+  content: "Date : ";
+}
+
+#temp::before {
+  content: "Temperature : ";
+}
+
+#content::before {
+  content: "Feeling : ";
+}
+
+@media screen and (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+  }
+}
