@@ -1,4 +1,5 @@
 const API_KEY = 'fd8ef3061871c7bcb9043693b0d65d2a';
+let units = "imperial";
 let rButton = document.querySelector("#generate");
 rButton.addEventListener("click", handleGenerate);
 
@@ -48,7 +49,7 @@ async function postData() {
     /**
      * @type {string} - the uri to fetch the data from
      */
-    const sUri = `https://api.openweathermap.org/data/2.5/weather?zip=${sZipCode},us&appid=${API_KEY}`;
+    const sUri = `https://api.openweathermap.org/data/2.5/weather?zip=${sZipCode},us&appid=${API_KEY}&units=${units}`;
     /**
      * @type {boolean} - returns true if the data posted successfully else false
      */
@@ -93,14 +94,10 @@ function updateStatus(sMessage) {
  * @param {object} result 
  */
 const fnUpdateUI = function (result) {
-    let date = result.date && new Date(result.date)
-    let fulldate;
-    if (date) {
-        fulldate = date.getDay() + "-" + (date.getMonth() + 1) + "-" + date.getFullYear();
-    } else {
-        fulldate = "";
-    }
+    let aMonths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    let date = new Date();
+    let fulldate = date.getUTCDate() + "<sup>th</sup> " + (aMonths[date.getUTCMonth()]) + ", " + date.getFullYear();
     document.querySelector("#date").innerHTML = fulldate;
-    document.querySelector("#temp").innerHTML = result.temp;
+    document.querySelector("#temp").innerHTML = result.temp || + " degrees";
     document.querySelector("#content").innerHTML = result.content;
 }
